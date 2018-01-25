@@ -6,8 +6,6 @@ class Content_Model {
         $this->db = new Mysql_Driver();
     }
     
-    
-
     public function UpdateHargaHariIni($data) {
         $query = "INSERT INTO content SET "
                 . "id_cawangan = '" . (int) $data['id_cawangan'] . "',"

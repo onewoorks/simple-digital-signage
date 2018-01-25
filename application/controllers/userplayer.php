@@ -30,6 +30,7 @@ class UserPlayer_Controller extends Common_Controller {
         $no_akses_id = $this->params[URL_ARRAY+1];
         $output['no_akses_id'] = $no_akses_id;
         $output['user_content'] = $this->UserContent($no_akses_id);
+        $output['current_player'] = $this->GetCurrentPlayer($no_akses_id);
         return $output;
     }
     
@@ -39,4 +40,19 @@ class UserPlayer_Controller extends Common_Controller {
         return $content;
     }
     
+    private function GetCurrentPlayer($no_akses_id){
+        $customer_model = new Cawangan_Model();
+        $current_player = $customer_model->GetCurrentPlayer($no_akses_id);
+        return $current_player;
+    }
+    
+    protected function AjaxCodePlayer(){
+        $no_akses_id = $_REQUEST['no_akses_id'];
+        $code_player = $_REQUEST['code_player'];
+        $cawangan_model = new Cawangan_Model();
+        $checkResult = $cawangan_model->CheckPlayerCode($no_akses_id, $code_player);
+//        ($checkResult) ? 'equal' : $cawangan_model->SyncPlayerCode($no_akses_id);
+        return ($checkResult) ? 'equal' : $cawangan_model->SyncPlayerCode($no_akses_id);;
+        
+    }
 }

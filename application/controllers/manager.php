@@ -125,6 +125,8 @@ class Manager_Controller extends Common_Controller {
             'media'=> $input['media']
         );
         $content_model->UpdateHargaHariIni($data);
+        $cawangan_model = new Cawangan_Model();
+        $cawangan_model->UpdatePlayerContent($input['no_akses_id'], $this->randomName());
         return true;
     }
     
