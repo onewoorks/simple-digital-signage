@@ -15,9 +15,12 @@
                 <form id='media_upload' action="UploadFile" enctype="multipart/form-data">
                     <input type="file" id="upload_file" name="upload_file[]" onchange="preview_image();" multiple/>
                     <input type='hidden' name='method' value="media_upload" />
-                    <input type="submit" name='submit_image' class="btn btn-primary " value="submit image" />
+                    <br>
+                    <div id="image_preview"></div>
+                    <br>
+                    <input type="submit" name='submit_image' class="btn btn-primary " value="upload image" />
                 </form>
-                <div id="image_preview"></div>
+                
             </div>
         </div>
     </div>
@@ -27,13 +30,14 @@
         $('#media_upload').submit(function (e) {
             e.preventDefault();
             var ajaxData = new FormData(this);
-            console.log(ajaxData);
             $.ajax({
                 url: 'UploadFiles',
                 type: 'post',
                 data: ajaxData,
                 success: function (data) {
-                    console.log(data);
+                    $('#image_preview').html('');
+                    alert('images berjaya dimuat naik');
+                    
                 },
                 cache: false,
                 contentType: false,
@@ -46,7 +50,7 @@
         var total_file = document.getElementById("upload_file").files.length;
         for (var i = 0; i < total_file; i++)
         {
-            $('#image_preview').append("<img style='width:120px' src='" + URL.createObjectURL(event.target.files[i]) + "'><br>");
+            $('#image_preview').append("<img style='height:180px' src='" + URL.createObjectURL(event.target.files[i]) + "'><br>");
         }
     }
 </script>
