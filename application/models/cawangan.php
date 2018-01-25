@@ -61,7 +61,7 @@ class Cawangan_Model {
         $query = "UPDATE cawangan "
                 . "SET current_player = code_player "
                 . "WHERE no_akses_id='".$this->db->escape($no_akses_id)."'";
-//        $this->db->executeQuery($query);
+        $this->db->executeQuery($query);
     }
     
 public function GetCurrentPlayer($no_akses_id){
