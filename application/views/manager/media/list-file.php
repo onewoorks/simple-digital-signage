@@ -30,3 +30,10 @@
         </div>
     </div>
 </section>
+
+<script>
+$(function(){
+    $('#media').addClass('active menu-open');
+    $('#media-file').addClass('active');        
+});
+</script>

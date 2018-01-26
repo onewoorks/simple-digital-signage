@@ -22,16 +22,16 @@
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="<?= ROOT_URL;?>manager"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
             
-            <li class="treeview">
+            <li id='media' class="treeview">
                 <a href="#"><i class="fa fa-link"></i> <span>Media</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="<?= ROOT_URL;?>manager/media-kategori">Kategori</a></li>
-                    <li><a href="<?= ROOT_URL;?>manager/media-file">File</a></li>
-                    <li><a href="<?= ROOT_URL;?>manager/media-upload">Muat Naik Imej</a></li>
+                    <li id='media-kategori'><a href="<?= ROOT_URL;?>manager/media-kategori">Kategori</a></li>
+                    <li id='media-file'><a href="<?= ROOT_URL;?>manager/media-file">File</a></li>
+                    <li id='media-upload'><a href="<?= ROOT_URL;?>manager/media-upload">Muat Naik Imej</a></li>
                 </ul>
             </li>
         </ul>
@@ -39,4 +39,3 @@
     </section>
     <!-- /.sidebar -->
 </aside>
-

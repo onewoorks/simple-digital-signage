@@ -91,6 +91,10 @@ class Manager_Controller extends Common_Controller {
     protected function MediaUpload() {
         $output['page'] = 'media/media-upload';
         $output['lib_path'] = ROOT_URL . 'application/libraries/jquery_upload/';
+        $output['menu_active'] = array(
+          'parent' => 'media',
+          'child' => 'media-upload'
+        );
         return $output;
     }
 

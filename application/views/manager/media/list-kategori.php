@@ -41,3 +41,10 @@
         </div>
     </div>
 </section>
+
+<script>
+$(function(){
+    $('#media').addClass('active menu-open');
+    $('#media-kategori').addClass('active');        
+});
+</script>
