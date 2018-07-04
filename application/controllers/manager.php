@@ -30,10 +30,22 @@ class Manager_Controller extends Common_Controller {
         $output['cawangan'] = $this->GetSenaraiCawangan();
         return $output;
     }
+    
+    protected function CawanganUbahGambar(){
+        $akses_id = $this->params[URL_ARRAY + 2];
+        $output = array();
+        $output['no_cawangan'] = $akses_id;
+        $output['page'] = 'cawangan/ubah-gambar';
+        $output['akses_id'] = $this->GetCawanganId($akses_id);
+        $output['rekod_content'] = $this->GetSenaraiRekodContent($akses_id);
+        $output['imej_database'] = $this->GetImageDatabase($akses_id);
+        return $output;
+    }
 
     protected function CawanganUbahMaklumat() {
         $akses_id = $this->params[URL_ARRAY + 2];
         $output = array();
+        $output['no_cawangan'] = $akses_id;
         $output['page'] = 'cawangan/ubah-maklumat';
         $output['akses_id'] = $this->GetCawanganId($akses_id);
         $output['rekod_content'] = $this->GetSenaraiRekodContent($akses_id);

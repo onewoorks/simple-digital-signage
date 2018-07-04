@@ -22,6 +22,7 @@ if ($params[URL_ARRAY] != 'sitemap.xml'):
     else :
         $page = $params[URL_ARRAY];
     endif;
+   
     
     $target = CONTROLLER . $page . '.php';
     
