@@ -35,7 +35,6 @@
         </div>
     </div>
 </section>
- <?php print_r($menu_active);?>
 <script>
     $(function () {
         $('#media').addClass('active menu-open');

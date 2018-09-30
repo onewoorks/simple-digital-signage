@@ -37,7 +37,7 @@ class Cawangan_Model {
                 . "FROM content c "
                 . "LEFT JOIN cawangan cw on cw.id=c.id_cawangan "
                 . "WHERE cw.no_akses_id = '".$no_akses_id."' "
-                . "ORDER BY c.id DESC";;
+                . "ORDER BY c.id DESC";
         return $this->db->executeQuery($query,'single');
     }
     

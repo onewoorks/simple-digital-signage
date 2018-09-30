@@ -48,6 +48,7 @@
                         </div>
                         <div class="box-footer">
                             <div class="pull-right">
+                                <input type='hidden' name='media' />
                                 <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o"></i> Kemaskini</button>
                             </div>
                         </div>
@@ -60,7 +61,7 @@
                         </div>
                         <div class="box-body text-right">
                             <a href='<?= ROOT_URL;?>manager/cawangan-ubah-gambar/<?= $no_cawangan; ?>' class="btn btn-primary">
-                                <i class="fa fa-floppy-o"></i> Kemaskini</a>
+                                <i class="fa fa-floppy-o"></i> Pilih Gambar</a>
                         </div>
                     </div>
 
@@ -107,21 +108,10 @@
 <script>
     $(function () {
         var currentImages = <?= json_encode($rekod_content['media']); ?>;
-        var images = currentImages.images;
-        $(images).each(function (i, v) {
-            $('[name=image_db][value="' + v + '"]').prop('checked', true);
-        });
 
         $('#update_maklumat_paparan').submit(function (e) {
             e.preventDefault();
-            var checkbox = $('[name=image_db]');
-            var checked = [];
-            $(checkbox).each(function (i, v) {
-                if ($(v).is(':checked')) {
-                    checked.push($(v).val())
-                }
-            });
-            var media = {"images": checked}
+            var media = currentImages;
             $('[name=media]').val(JSON.stringify(media));
             var input = $(this).serializeArray();
 
